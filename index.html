@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="Icon/Mine Logo.png" type="image/x-icon">
+  <title>Salah Uddin Kader - Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;family=Poppins:wght@300;400;500;600;700;800;900&amp;family=Playfair+Display:wght@400;500;600;700;800;900&amp;family=Raleway:wght@300;400;500;600;700;800;900&amp;family=Montserrat:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+  <script src="/_sdk/element_sdk.js"></script>
+    <link rel="stylesheet" href="Assets/style.css">
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body><!-- Custom Cursor -->
+  <div class="custom-cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div><!-- Intro Loader -->
+  <div class="intro-loader" id="introLoader">
+   <div class="loader-content">
+    <div class="loader-logo">
+     SK
+    </div>
+    <div class="loader-bar">
+     <div class="loader-progress" id="loaderProgress"></div>
+    </div>
+   </div>
+  </div><!-- Hire Popup Modal -->
+  <div class="hire-popup-overlay" id="hirePopup">
+   <div class="hire-popup">
+    <div class="hire-popup-close" id="closeHirePopup"><i class="fas fa-times"></i>
+    </div>
+    <div class="hire-popup-header">
+     <div class="hire-popup-icon"><i class="fas fa-handshake"></i>
+     </div>
+     <h2>Let's Work Together!</h2>
+     <p class="hire-popup-desc">Ready to bring your project to life? Fill out the form below or reach out directly through my contact channels.</p>
+    </div>
+    <form class="hire-popup-form" id="hireForm" action="https://formspree.io/f/mqardzbe" method="POST">
+
+    <!-- Email formatting -->
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_subject" value="New Hire Request Received">
+    <input type="hidden" name="formType" value="Hire Form">
+
+    <div class="form-group">
+        <label>Your Name *</label>
+        <input type="text" name="name" placeholder="Enter your full name" required>
+    </div>
+
+    <div class="form-group">
+        <label>Your Email *</label>
+        <input type="email" name="email" placeholder="Enter your email address" required>
+    </div>
+
+    <div class="form-group">
+        <label>Project Type *</label>
+        <input type="text" name="project" placeholder="Web Development, UI/UX, Marketing etc." required>
+    </div>
+
+    <div class="form-group">
+        <label>Budget Range</label>
+        <input type="text" name="budget" placeholder="e.g. $500 - $1500">
+    </div>
+
+    <div class="form-group">
+        <label>Project Details *</label>
+        <textarea name="message" rows="4" placeholder="Briefly describe your project..." required></textarea>
+    </div>
+    <button type="submit" class="submit-btn">Send Proposal</button>
+    </form>
+
+    <div class="hire-contact-info">
+     <h4>Or Contact Me Directly:</h4>
+     <div class="hire-contact-links"><a href="mailto:salauddinkaderappy@gmail.com" class="hire-contact-link"> <i class="fas fa-envelope"></i> <span>Email</span> </a> <a href="https://wa.me/8801851075537" target="_blank" rel="noopener noreferrer" class="hire-contact-link"> <i class="fab fa-whatsapp"></i> <span>WhatsApp</span> </a> <a href="https://linkedin.com/in/salahuddingfx" target="_blank" rel="noopener noreferrer" class="hire-contact-link"> <i class="fab fa-linkedin"></i> <span>LinkedIn</span> </a>
+     </div>
+    </div>
+   </div>
+  </div><!-- Navigation -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">SK</a>
+
+    <!-- Desktop Menu -->
+    <ul class="nav-links hidden md:flex">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact" class="hire-btn">Hire Me</a></li>
+    </ul>
+
+    <!-- Mobile Hamburger Button -->
+    <button id="mobileMenuBtn" class="text-white text-3xl md:hidden">
+        <i class="fas fa-bars"></i>
+    </button>
+</nav>
+
+<!-- Mobile Menu (Hidden by default) -->
+<div id="mobileMenu"
+     class="hidden md:hidden bg-[#0f172a]/90 backdrop-blur-xl border border-white/10
+            w-[90%] mx-auto mt-4 rounded-xl p-6 fixed top-[90px] left-1/2 -translate-x-1/2 z-[999]">
+    
+    <ul class="flex flex-col gap-5 text-lg font-medium">
+        <li><a class="mobile-link" href="#home">Home</a></li>
+        <li><a class="mobile-link" href="#about">About</a></li>
+        <li><a class="mobile-link" href="#skills">Skills</a></li>
+        <li><a class="mobile-link" href="#portfolio">Portfolio</a></li>
+        <li><a class="mobile-link" href="#services">Services</a></li>
+        <li><a class="mobile-link" href="#contact">Contact</a></li>
+        <li><a class="mobile-link hire-btn text-center" href="#contact">Hire Me</a></li>
+    </ul>
+</div>
+<!-- Theme Toggle --> <button class="theme-toggle" id="themeToggle"> <i class="fas fa-moon"></i> </button> <!-- Scroll to Top --> <button class="scroll-top" id="scrollTop"> <i class="fas fa-arrow-up"></i> </button> <!-- Hero Section -->
+  <section id="home" class="hero">
+   <div id="particles-js"></div>
+   <div class="hero-content">
+    <h1 id="heroName">Salah Uddin Kader</h1>
+    <p class="tagline" id="heroTagline">Creative Designer &amp; Developer | Transforming Ideas into Digital Masterpieces</p>
+    <div class="typing" id="typing">
+     Web Developer 💻
+    </div>
+    <div class="btn-group"><a href="#services" class="primary-btn"> <i class="fas fa-briefcase"></i> <span>View My Work</span> </a> <a href="#contact" class="secondary-btn"> <i class="fas fa-envelope"></i> <span>Get in Touch</span> </a> <a href="#" class="primary-btn" id="downloadCV" style="background: linear-gradient(135deg, #10b981, #059669);"> <i class="fas fa-download"></i> <span>Download CV</span> </a>
+    </div>
+   </div>
+  </section><!-- About Section -->
+  <section id="about" class="about">
+   <h2 class="section-title">About Me</h2>
+   <div class="about-content">
+    <div class="about-image">
+        <img src="Images/Profile-Images.png" class="about_image" alt="My Profile Images">
+    </div>
+    <div class="about-text">
+     <h3>Passionate Creator &amp; Problem Solver</h3>
+     <p id="aboutText">I'm Salah Uddin Kader, a creative professional specializing in digital design and development. With a keen eye for detail and a passion for innovation, I transform ideas into stunning digital experiences that captivate and engage audiences.</p>
+     <div class="skills-grid">
+      <div class="skill-item"><i class="fas fa-palette"></i> <span>UI/UX Design</span>
+      </div>
+      <div class="skill-item"><i class="fab fa-html5"></i> <span>HTML5</span>
+      </div>
+      <div class="skill-item"><i class="fab fa-css3-alt"></i> <span>CSS3</span>
+      </div>
+      <div class="skill-item"><i class="fab fa-js"></i> <span>JavaScript</span>
+      </div>
+      <div class="skill-item"><i class="fab fa-react"></i> <span>React</span>
+      </div>
+      <div class="skill-item"><i class="fab fa-node"></i> <span>Node.js</span>
+      </div>
+      <div class="skill-item"><i class="fab fa-php"></i> <span>PHP</span>
+      </div>
+      <div class="skill-item"><i class="fab fa-laravel"></i> <span>Laravel</span>
+      </div>
+      <div class="skill-item"><i class="fab fa-figma"></i> <span>Figma</span>
+      </div>
+      <div class="skill-item"><i class="fas fa-mobile-alt"></i> <span>Responsive Design</span>
+      </div>
+      <div class="skill-item"><i class="fas fa-database"></i> <span>Database</span>
+      </div>
+      <div class="skill-item"><i class="fas fa-chart-line"></i> <span>Performance</span>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section><!-- Skills Section -->
+  <section id="skills" class="skills-section">
+   <h2 class="section-title">My Skills</h2><!-- Skill Tabs -->
+   <div class="skill-tabs"><button class="skill-tab active" data-skill="development"> <i class="fas fa-code"></i> <span>Development</span> </button> <button class="skill-tab" data-skill="design"> <i class="fas fa-palette"></i> <span>Design</span> </button> <button class="skill-tab" data-skill="marketing"> <i class="fas fa-bullhorn"></i> <span>Marketing</span> </button>
+   </div>
+   <div class="skills-container">
+    <div class="skill-category active" data-category="development">
+     <h3><i class="fas fa-code"></i> Development</h3>
+     <div class="skill-bars">
+      <div class="skill-bar">
+       <div class="skill-info"><span><i class="fab fa-html5"></i> HTML5 / CSS3</span> <span>95%</span>
+       </div>
+       <div class="skill-progress">
+        <div class="skill-fill" style="width: 95%"></div>
+       </div>
+      </div>
+      <div class="skill-bar">
+       <div class="skill-info"><span><i class="fab fa-react"></i> JavaScript / React</span> <span>90%</span>
+       </div>
+       <div class="skill-progress">
+        <div class="skill-fill" style="width: 90%"></div>
+       </div>
+      </div>
+      <div class="skill-bar">
+       <div class="skill-info"><span><i class="fab fa-node"></i> Node.js / Express</span> <span>85%</span>
+       </div>
+       <div class="skill-progress">
+        <div class="skill-fill" style="width: 85%"></div>
+       </div>
+      </div>
+      <div class="skill-bar">
+       <div class="skill-info"><span><i class="fab fa-php"></i> PHP / Laravel</span> <span>80%</span>
+       </div>
+       <div class="skill-progress">
+        <div class="skill-fill" style="width: 80%"></div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="skill-category" data-category="design">
+     <h3><i class="fas fa-palette"></i> Design</h3>
+     <div class="skill-bars">
+      <div class="skill-bar">
+       <div class="skill-info"><span><i class="fas fa-pen-nib"></i> UI/UX Design</span> <span>92%</span>
+       </div>
+       <div class="skill-progress">
+        <div class="skill-fill" style="width: 92%"></div>
+       </div>
+      </div>
+      <div class="skill-bar">
+       <div class="skill-info"><span><i class="fas fa-image"></i> Adobe Photoshop</span> <span>88%</span>
+       </div>
+       <div class="skill-progress">
+        <div class="skill-fill" style="width: 88%"></div>
+       </div>
+      </div>
+      <div class="skill-bar">
+       <div class="skill-info"><span><i class="fab fa-figma"></i> Figma / Adobe XD</span> <span>90%</span>
+       </div>
+       <div class="skill-progress">
+        <div class="skill-fill" style="width: 90%"></div>
+       </div>
+      </div>
+      <div class="skill-bar">
+       <div class="skill-info"><span><i class="fas fa-draw-polygon"></i> Illustrator</span> <span>85%</span>
+       </div>
+       <div class="skill-progress">
+        <div class="skill-fill" style="width: 85%"></div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="skill-category" data-category="marketing">
+     <h3><i class="fas fa-bullhorn"></i> Marketing</h3>
+     <div class="skill-bars">
+      <div class="skill-bar">
+       <div class="skill-info"><span><i class="fas fa-chart-bar"></i> Digital Marketing</span> <span>87%</span>
+       </div>
+       <div class="skill-progress">
+        <div class="skill-fill" style="width: 87%"></div>
+       </div>
+      </div>
+      <div class="skill-bar">
+       <div class="skill-info"><span><i class="fas fa-search"></i> SEO / SEM</span> <span>89%</span>
+       </div>
+       <div class="skill-progress">
+        <div class="skill-fill" style="width: 89%"></div>
+       </div>
+      </div>
+      <div class="skill-bar">
+       <div class="skill-info"><span><i class="fas fa-share-alt"></i> Social Media Marketing</span> <span>91%</span>
+       </div>
+       <div class="skill-progress">
+        <div class="skill-fill" style="width: 91%"></div>
+       </div>
+      </div>
+      <div class="skill-bar">
+       <div class="skill-info"><span><i class="fas fa-pencil-alt"></i> Content Strategy</span> <span>84%</span>
+       </div>
+       <div class="skill-progress">
+        <div class="skill-fill" style="width: 84%"></div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section><!-- Portfolio Section -->
+  <section id="portfolio" class="portfolio">
+   <h2 class="section-title">My Portfolio</h2>
+   <div class="portfolio-filters"><button class="filter-btn active" data-filter="all">All Projects</button> <button class="filter-btn" data-filter="web">Web Design</button> <button class="filter-btn" data-filter="app">Applications</button> <button class="filter-btn" data-filter="design">Design</button>
+   </div>
+   <div class="portfolio-grid">
+    <div class="portfolio-item" data-category="web">
+     <div class="portfolio-image">
+      <div class="portfolio-placeholder"><i class="fas fa-globe"></i>
+      </div>
+     </div>
+     <div class="portfolio-info">
+      <h3>E-Commerce Platform</h3>
+      <p>Modern online shopping experience with seamless checkout</p>
+      <div class="portfolio-tags"><span>React</span> <span>Node.js</span> <span>MongoDB</span>
+      </div>
+     </div>
+    </div>
+    <div class="portfolio-item" data-category="app">
+     <div class="portfolio-image">
+      <div class="portfolio-placeholder"><i class="fas fa-mobile-alt"></i>
+      </div>
+     </div>
+     <div class="portfolio-info">
+      <h3>Task Management App</h3>
+      <p>Intuitive productivity tool for team collaboration</p>
+      <div class="portfolio-tags"><span>React Native</span> <span>Firebase</span>
+      </div>
+     </div>
+    </div>
+    <div class="portfolio-item" data-category="design">
+     <div class="portfolio-image">
+      <div class="portfolio-placeholder"><i class="fas fa-paint-brush"></i>
+      </div>
+     </div>
+     <div class="portfolio-info">
+      <h3>Brand Identity Design</h3>
+      <p>Complete branding package for startup company</p>
+      <div class="portfolio-tags"><span>Illustrator</span> <span>Photoshop</span>
+      </div>
+     </div>
+    </div>
+    <div class="portfolio-item" data-category="web">
+     <div class="portfolio-image">
+      <div class="portfolio-placeholder"><i class="fas fa-laptop-code"></i>
+      </div>
+     </div>
+     <div class="portfolio-info">
+      <h3>Portfolio Website</h3>
+      <p>Elegant portfolio showcase for creative professional</p>
+      <div class="portfolio-tags"><span>HTML5</span> <span>CSS3</span> <span>JavaScript</span>
+      </div>
+     </div>
+    </div>
+    <div class="portfolio-item" data-category="app">
+     <div class="portfolio-image">
+      <div class="portfolio-placeholder"><i class="fas fa-chart-line"></i>
+      </div>
+     </div>
+     <div class="portfolio-info">
+      <h3>Analytics Dashboard</h3>
+      <p>Real-time data visualization and reporting tool</p>
+      <div class="portfolio-tags"><span>Vue.js</span> <span>D3.js</span> <span>API</span>
+      </div>
+     </div>
+    </div>
+    <div class="portfolio-item" data-category="design">
+     <div class="portfolio-image">
+      <div class="portfolio-placeholder"><i class="fas fa-pencil-ruler"></i>
+      </div>
+     </div>
+     <div class="portfolio-info">
+      <h3>UI/UX Case Study</h3>
+      <p>Mobile app redesign improving user engagement by 150%</p>
+      <div class="portfolio-tags"><span>Figma</span> <span>User Research</span>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section><!-- Services Section -->
+  <section id="services" class="services">
+   <h2 class="section-title">My Services</h2>
+   <div class="services-grid">
+    <div class="service-card"><i class="fas fa-paint-brush"></i>
+     <h3>UI/UX Design</h3>
+     <p>Creating intuitive and visually stunning user interfaces that provide exceptional user experiences.</p>
+    </div>
+    <div class="service-card"><i class="fas fa-laptop-code"></i>
+     <h3>Web Development</h3>
+     <p>Building responsive, fast, and scalable web applications using modern technologies.</p>
+    </div>
+    <div class="service-card"><i class="fas fa-mobile-alt"></i>
+     <h3>Mobile Design</h3>
+     <p>Designing mobile-first experiences that work seamlessly across all devices.</p>
+    </div>
+    <div class="service-card"><i class="fas fa-search"></i>
+     <h3>SEO Optimization</h3>
+     <p>Implementing SEO best practices to improve visibility and ranking.</p>
+    </div>
+    <div class="service-card"><i class="fas fa-rocket"></i>
+     <h3>Performance Tuning</h3>
+     <p>Optimizing applications for maximum speed and efficiency.</p>
+    </div>
+    <div class="service-card"><i class="fas fa-headset"></i>
+     <h3>Consulting</h3>
+     <p>Providing expert advice on digital strategy, design, and development.</p>
+    </div>
+   </div>
+  </section><!-- Contact Section -->
+  <section id="contact" class="contact">
+   <h2 class="section-title">Get In Touch</h2>
+   <div class="contact-container">
+    <div class="contact-info">
+     <div class="contact-item"><i class="fas fa-envelope"></i>
+      <div>
+       <h4>Email</h4>
+       <p id="contactEmail">salauddinkaderappy@gmail.com</p>
+      </div>
+     </div>
+     <div class="contact-item"><i class="fab fa-whatsapp"></i>
+      <div>
+       <h4>WhatsApp</h4>
+       <p><a href="https://wa.me/8801851075537" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;" id="contactWhatsapp">+880 1851-075537</a></p>
+      </div>
+     </div>
+     <div class="contact-item"><i class="fas fa-user"></i>
+      <div>
+       <h4>Social Media</h4>
+       <p id="contactSocial">@salahuddingfx</p>
+      </div>
+     </div>
+     <div class="social-links"><a href="https://github.com/salahuddingfx" target="_blank" rel="noopener noreferrer" class="social-link"> <i class="fab fa-github"></i> </a> <a href="https://linkedin.com/in/salahuddingfx" target="_blank" rel="noopener noreferrer" class="social-link"> <i class="fab fa-linkedin"></i> </a> <a href="https://twitter.com/salahuddingfx" target="_blank" rel="noopener noreferrer" class="social-link"> <i class="fab fa-twitter"></i> </a> <a href="https://instagram.com/salahuddingfx" target="_blank" rel="noopener noreferrer" class="social-link"> <i class="fab fa-instagram"></i> </a>
+        <a href="https://facebook.com/salahuddingfx" target="_blank" rel="noopener noreferrer" class="social-link"> <i class="fab fa-facebook"></i> </a>
+     </div>
+    </div>
+    <form class="contact-form" id="contactForm">
+     <div class="form-group"><label for="name">Your Name</label> <input type="text" id="name" name="name" required>
+     </div>
+     <div class="form-group"><label for="email">Your Email</label> <input type="email" id="email" name="email" required>
+     </div>
+     <div class="form-group"><label for="subject">Subject</label> <input type="text" id="subject" name="subject" required>
+     </div>
+     <div class="form-group"><label for="message">Your Message</label> <textarea id="message" name="message" required></textarea>
+     </div><button type="submit" class="submit-btn">Send Message</button>
+    </form>
+   </div>
+  </section><!-- Footer -->
+  <footer class="footer">
+   <div class="footer-content"><!-- Business Card in Footer -->
+    <div class="business-card-container-footer">
+     <div class="business-card" id="businessCard">
+      <div class="card-front">
+       <div>
+        <div class="card-logo">
+         SK
+        </div>
+       </div>
+       <div>
+        <div class="card-name" id="cardName">
+         Salah Uddin Kader
+        </div>
+        <div class="card-title">
+         Full Stack Developer &amp; Designer
+        </div>
+       </div>
+      </div>
+      <div class="card-back">
+       <div class="card-contact">
+        <div class="card-contact-item"><i class="fas fa-phone"></i> <span id="cardPhone">+880 1851-075537</span>
+        </div>
+        <div class="card-contact-item"><i class="fas fa-envelope"></i> <span id="cardEmail">salauddinkaderappy@gmail.com</span>
+        </div>
+        <div class="card-contact-item"><i class="fab fa-whatsapp"></i> <span>WhatsApp Available</span>
+        </div>
+        <div class="card-contact-item"><i class="fab fa-linkedin"></i> <span id="cardSocial">@salahuddingfx</span>
+        </div>
+       </div>
+       <div class="card-flip-hint"><a href="#" id="saveContact" style="color: #6366f1; text-decoration: none; font-weight: 600;"> <i class="fas fa-download"></i> Save Contact </a>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="footer-logo" id="footerName">
+     Salah Uddin Kader
+    </div>
+    <p class="footer-text">Crafting digital experiences that inspire and engage</p>
+    <div class="footer-social"><a href="https://github.com/salahuddingfx" target="_blank" rel="noopener noreferrer" class="social-link"> <i class="fab fa-github"></i> </a> <a href="https://linkedin.com/in/salahuddingfx" target="_blank" rel="noopener noreferrer" class="social-link"> <i class="fab fa-linkedin"></i> </a> <a href="https://twitter.com/salahuddingfx" target="_blank" rel="noopener noreferrer" class="social-link"> <i class="fab fa-twitter"></i> </a> <a href="https://instagram.com/salahuddingfx" target="_blank" rel="noopener noreferrer" class="social-link"> <i class="fab fa-instagram"></i> </a> <a href="https://behance.net/salahuddingfx" target="_blank" rel="noopener noreferrer" class="social-link"> <i class="fab fa-behance"></i> </a>
+    <a href="https://dribble.com/salahuddingfx" target="_blank" rel="noopener noreferrer" class="social-link"> <i class="fab fa-dribbble"></i> </a>
+    <a href="https://wa.me/8801851075537" target="_blank" rel="noopener noreferrer" class="social-link"> <i class="fab fa-whatsapp"></i> </a>
+    </div><!-- Real-time Date and Time -->
+    <div class="footer-datetime"><i class="fas fa-clock"></i> <span id="currentDateTime"></span>
+    </div>
+    <p class="footer-copyright" id="footerCopyright">© 2024 Salah Uddin Kader. All rights reserved.</p>
+   </div>
+  </footer><!-- Particles.js Library -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="Assets/script.js"></script>
+</body>
+</html>
