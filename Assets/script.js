@@ -514,14 +514,14 @@ document.querySelectorAll(".mobile-link").forEach(link => {
             const config = window.elementSdk ? window.elementSdk.config : defaultConfig;
             const name = config.full_name || defaultConfig.full_name;
             const email = config.email_address || defaultConfig.email_address;
-            const phone = "+8801581762911";
+            const phone = "+8801851075537";
             
             const vcard = `BEGIN:VCARD
 VERSION:3.0
 FN:${name}
 TEL;TYPE=CELL:${phone}
 EMAIL:${email}
-URL:https://wa.me/8801581762911
+URL:https://wa.me/8801851075537
 END:VCARD`;
             
             const blob = new Blob([vcard], { type: 'text/vcard' });
